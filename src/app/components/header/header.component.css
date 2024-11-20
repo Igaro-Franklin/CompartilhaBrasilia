@@ -1,0 +1,42 @@
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 1em;
+    border-bottom: 1px solid #777;
+}
+
+.logo, .links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo img{
+    width: 36px;
+    margin-right: .6em;
+}
+
+.logo h2{
+    transition: .4s;
+}
+
+.logo:hover > h2{
+    color: #59fcfc;
+}
+
+.links li{
+    margin-right: 1em;
+    list-style: none;
+}
+
+.links a {
+    padding:  .1em .3em;
+}
+
+#add a {
+    color: #59fcfc;
+}
+
+#add a:hover{
+    background-color: #3355557a;
+}
