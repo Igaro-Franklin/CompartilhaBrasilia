@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-evento-form',
@@ -7,5 +7,13 @@ import { Component } from '@angular/core';
   styleUrl: './evento-form.component.css'
 })
 export class EventoFormComponent {
+  @Input() btnText!: String
 
+  constructor(){
+
+  }
+
+  ngOnInit(): void{
+
+  }
 }
