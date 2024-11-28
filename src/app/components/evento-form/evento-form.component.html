@@ -1,15 +1,25 @@
-<form>
+<form (ngSubmit)="submit()" [formGroup]="eventoForm">
     <div class="form-group">
-        <label for="titulo">Título:</label>
-        <input type="text" placeholder="Nome do envento" required>
+      <label for="titulo">Título:</label>
+      <input type="text" placeholder="Nome do evento" formControlName="title" required >
     </div>
-    <div class="form-group">
-        <label for="descricao">Descrição:</label>
-        <textarea placeholder="O que há de bom nesse evento?" required></textarea>
+    <div *ngIf="title.invalid && (title.touched || formSubmitted)" class="erroValidacao">
+      <p *ngIf="title.errors?.['required']">Preencha o campo!</p>
     </div>
+  
     <div class="form-group">
-        <label for="imagem">Capa do evento:</label>
-        <input type="file">
+      <label for="descricao">Descrição:</label>
+      <textarea placeholder="O que há de bom nesse evento?" formControlName="description" required>
+      </textarea>
+    </div>
+    <div *ngIf="description.invalid && (description.touched || formSubmitted)" class="erroValidacao">
+      <p *ngIf="description.errors?.['required']">Preencha o campo descrição!</p>
+    </div>
+  
+    <div class="form-group">
+      <label for="imagem">Capa do evento:</label>
+      <input type="file" formControlName="image">
     </div>
     <input type="submit" value="{{ btnText }}">
-</form>
+  </form>
+  
